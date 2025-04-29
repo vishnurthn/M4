@@ -11,10 +11,35 @@ To write a C Program to perform the basic left shift operation for 44 integer nu
 
 ## PROGRAM
 
+    #include <stdio.h>
+
+    int main() {
+    int num = 44; 
+    int shifts = 3; 
+    int result;
+
+   
+    result = num << shifts;
+
+   
+    printf("Original number: %d\n", num);
+    printf("After left shifting by %d positions: %d\n", shifts, result);
+
+    return 0;
+    }
+
+
 ## OUTPUT
 
+    Original number: 44
+    After left shifting by 3 positions: 352
 
 
+
+
+## NAME: Vishnu Rathan B
+
+## REG NO:212224240185
 
 
 
@@ -48,8 +73,41 @@ Write a C Program to check whether the two numbers are equal or not using simple
 
 ## PROGRAM
 
+    #include <stdio.h>
+
+    int main() {
+    int num1, num2;
+
+    
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    
+    if (num1 == num2) {
+        printf("The two numbers are equal.\n");
+    } else {
+        printf("The two numbers are not equal.\n");
+    }
+
+    return 0;
+    }
+
+
 
 ## OUTPUT
+
+    Enter first number: 25
+    Enter second number: 25
+    The two numbers are equal.
+
+
+
+## NAME: Vishnu Rathan B
+
+## REG NO:212224240185
            
 ## RESULT
 
@@ -71,8 +129,38 @@ Write a C Program to convert the given string into lowercase.
 
 ## PROGRAM
 
+    #include <stdio.h>
+    #include <ctype.h>  // for tolower() function
+
+    int main() {
+    char str[100];
+    int i;
+
+    
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin); 
+
+    
+    for (i = 0; str[i] != '\0'; i++) {
+        str[i] = tolower(str[i]);
+    }
+
+   
+    printf("Lowercase string: %s", str);
+
+    return 0;
+    }
+
+
 ## OUTPUT
 
+    Enter a string: HeLLo WorLD
+    Lowercase string: hello world
+
+
+## NAME: Vishnu Rathan B
+
+## REG NO:212224240185
 
 
 
@@ -96,7 +184,44 @@ Write a C Program to count the total number of words in a given string using do 
 
 ## PROGRAM
 
+    #include <stdio.h>
+
+    int main() {
+    char str[200];
+    int i = 0, wordCount = 0;
+
+    
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+   
+    if (str[0] != ' ' && str[0] != '\n') {
+        wordCount = 1;
+    }
+
+   
+    do {
+        if ((str[i] == ' ' || str[i] == '\n') && (str[i+1] != ' ' && str[i+1] != '\n' && str[i+1] != '\0')) {
+            wordCount++;
+        }
+        i++;
+    } while (str[i] != '\0');
+
+    printf("Total number of words = %d\n", wordCount);
+
+    return 0;
+    }
+
+
 ## OUTPUT
+
+    Enter a string: Hello world this is C
+    Total number of words = 5
+  
+
+## NAME: Vishnu Rathan B
+
+## REG NO:212224240185
 
 
 
@@ -130,8 +255,55 @@ Step 8: End the program.
 
 ## PROGRAM
 
+    #include <stdio.h>
+
+    int main() {
+    char str1[100], str2[100];
+    int i = 0, flag = 0;
+
+    
+    printf("Enter first string: ");
+    fgets(str1, sizeof(str1), stdin);
+
+    printf("Enter second string: ");
+    fgets(str2, sizeof(str2), stdin);
+
+   
+    while (str1[i] != '\0' && str2[i] != '\0') {
+        if (str1[i] != str2[i]) {
+            flag = 1;
+            break;
+        }
+        i++;
+    }
+
+    if (str1[i] != str2[i]) {
+        flag = 1;
+    }
+
+    
+    if (flag == 0) {
+        printf("Strings are equal.\n");
+    } else {
+        printf("Strings are not equal.\n");
+    }
+
+    return 0;
+    }
+
+
 
 ## OUTPUT
+
+    Enter first string: Hello
+    Enter second string: Hello
+    Strings are equal.
+
+## NAME: Vishnu Rathan B
+
+## REG NO:212224240185
+
+
  
 
 ## RESULT
